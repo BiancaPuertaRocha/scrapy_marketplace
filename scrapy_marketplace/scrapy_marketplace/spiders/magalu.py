@@ -12,5 +12,5 @@ class MagaluSpider(BaseSpider):
             value = product.xpath('//p[@data-testid="price-value"]/text()').get()
             yield {
                 'name': name,
-                'value': value,
+                'price': value,
             }
