@@ -1,2 +1,8 @@
 venv
 local_*
+*.pyc
+*.pyo
+
+build/
+dist/
+__pycache__/
