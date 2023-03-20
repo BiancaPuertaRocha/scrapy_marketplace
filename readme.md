@@ -6,5 +6,5 @@
     scrapy genspider example example.com
 
 ### to run an existing spider
-    scrapy crawl marketplace -O marketplace_result.csv
-    scrapy crawl marketplace -O marketplace_result.json
+    scrapy crawl magalu -a term=chuteira -O chuteira_magalu.csv
+    scrapy crawl magalu -a term=chuteira -O chuteira_magalu.json
