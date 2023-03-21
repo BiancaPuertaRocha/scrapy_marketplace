@@ -8,7 +8,15 @@ class MercadolibreSpider(BaseSpider):
 
 
     def parse(self, response):
-        print('\n\n')
-        print(self.start_urls)
-        return None
+        for product in response.css('.ui-search-result__content'):
+            name = product.css('h2 ::text').get()
+            value = ""
+            for part in product.css('div.ui-search-price--size-medium .price-tag-amount span[class^="price-tag-"]'):
+                value += part.css('::text').get()
+
+            yield {
+                'source': 'mercadolibre',
+                'name': name,
+                'price': value,
+            }
 
